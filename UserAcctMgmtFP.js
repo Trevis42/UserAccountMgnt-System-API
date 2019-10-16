@@ -1,18 +1,23 @@
 const UserAcctMgmt = (function() {
-	const user = {};
+	const user = {
+		email: "email",
+		password: "password",
+		passwordConfirm: "passwordConfirm"
+	};
 
-	const email = "";
-	const password = "";
-	const passwordConfirm = "";
-
-	user.signUp = function() {
-		console.log(`${email} ||| ${password} ||| ${passwordConfirm}`);
+	const signUp = function() {
+		console.log(`${user.email} ||| ${user.password} ||| ${user.passwordConfirm}`);
 	}; //private
-	function signIn(user) {}
+	function signIn() {
+		console.log("sign in happened");
+	}
 	function signOut(user) {}
 	function changePassword(user) {}
 
+	console.log(signUp());
+	console.log(signIn());
+
 	return user;
 })();
-const user = new UserAcctMgmt.user("EmaiL", "PswD", "PswD");
-console.log(user);
+UserAcctMgmt.user;
+//console.log(UserAcctMgmt);
