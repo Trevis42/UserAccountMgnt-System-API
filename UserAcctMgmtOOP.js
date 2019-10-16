@@ -38,9 +38,11 @@ class User {
 
 	signUp() {
 		if (typeof userDB.get(this.email) === "undefined") {
-			console.log("Congrats, You have signed up!!! YAY!!!!");
-			this.isVerified = true;
-			this.saveInfo();
+			if (this.getPassword() === this.passwordConfirm) {
+				console.log("Congrats, You have signed up!!! YAY!!!!");
+				this.isVerified = true;
+				this.saveInfo();
+			}
 		} else {
 			console.log("Sorry, You don't need to sign up AGAIN... :)");
 		}
