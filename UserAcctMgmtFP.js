@@ -11,6 +11,8 @@ const UserAcctMgmt = (function() {
 	function signIn(user) {}
 	function signOut(user) {}
 	function changePassword(user) {}
-})();
 
-UserAcctMgmt.user("EmaiL", "PswD", "PswD");
+	return user;
+})();
+const user = new UserAcctMgmt.user("EmaiL", "PswD", "PswD");
+console.log(user);

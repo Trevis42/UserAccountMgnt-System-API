@@ -52,9 +52,9 @@ class User {
 		if (typeof userDB.get(this.email) != "undefined" && !this.isSignedIn) {
 			this.authenticate();
 			this.isSignedIn = true;
-			console.log(`You have signed in! :: ${this.isSignedIn}`);
+			console.log(`You have signed in! ${this.isSignedIn}`);
 		} else if (this.isSignedIn) {
-			console.log(`You are already signed in... :: ${this.isSignedIn}`);
+			console.log(`You are already signed in.!${this.isSignedIn}`);
 		} else {
 			console.log("Cannot find account, please sign up first");
 			this.isSignedIn = false;
@@ -75,16 +75,22 @@ class User {
 	}
 
 	changePassword(previous, next) {
-		if (next === previous) {
-			console.log(
-				`New password: ${next} is the same as current password: ${previous} \nYou cant reuse the same password.`
-			);
-		} else if (userDB.get(this.email).getPassword() === previous) {
-			this.password = next;
-			console.log(`Your password has been changed to: ${next}`);
+		if (this.isSignedIn) {
+			if (next === previous) {
+				console.log(
+					`New password: ${next} is the same as current password: ${previous} \nYou cant reuse the same password.`
+				);
+			} else if (userDB.get(this.email).getPassword() === previous) {
+				this.password = next;
+				this.passwordConfirm = this.password;
+				console.log(`Your password has been changed to: ${next}`);
+			} else {
+				console.log(`The password: ${previous} does match your current password, please try again.`);
+			}
 		} else {
-			console.log(`The password: ${previous} does match your current password, please try again.`);
+			console.log("You need to signing before changing your password.");
 		}
+		return this;
 	}
 }
 
