@@ -24,14 +24,13 @@ class User {
 
 	authenticate() {
 		if (typeof userDB.get(this.email).getPassword() === "undefined") {
-			console.log(`Cannot find password, please try again; \nAuthentication is 
-			${this.isAuthenticated}`);
+			console.log(`Cannot find password, please try again.`);
 		} else if (userDB.get(this.email).getPassword() === this.password && this.isVerified) {
 			console.log("you have been authenticated");
 			this.isAuthenticated = true;
 		} else {
 			this.isAuthenticated = false;
-			console.log(`Authentication error, User does not exist! :: 
+			console.log(`Authentication error, User does not exist! Authentication:  
 			${this.isAuthenticated}`);
 		}
 		return this;
