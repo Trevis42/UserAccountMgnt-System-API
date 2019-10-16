@@ -13,14 +13,14 @@ class User {
 		userDB.set(this.email, this);
 		return this;
 	}
-	//I can use this to grab email without explicitly calling the variable
+	//I can use this to grab email without calling the variable directly (data safety)
 	getEmail() {
 		return this.email;
 	}
-
+	//I use this to grab password without calling the variable directly (data safety)
 	getPassword() {
 		return this.password;
-	}
+	} //don't really need this but using a few times for a few things
 
 	authenticate() {
 		if (typeof userDB.get(this.email).getPassword() === "undefined") {
