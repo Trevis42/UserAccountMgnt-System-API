@@ -1,4 +1,4 @@
-const UAM = require("./API stuff/UserAcctMgmtFP");
+const UAM = require("./UserAcctMgmtFP");
 
 const userDB = new Map();
 

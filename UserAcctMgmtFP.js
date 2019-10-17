@@ -6,7 +6,7 @@ const user = function(email, password, passwordConfirm) {
 }; //private
 
 const signUp = function(obj) {
-	console.log(`${obj.email} ||| ${obj.password} ||| ${obj.passwordConfirm}`);
+	console.log(`${(obj.email = "green")} ||| ${obj.password} ||| ${obj.passwordConfirm}`);
 };
 const signIn = function(obj) {
 	console.log("sign in happened");
