@@ -3,7 +3,7 @@ const user = function(email, password, passwordConfirm) {
 	this.password = password;
 	this.passwordConfirm = passwordConfirm;
 	return this;
-}; //private
+};
 
 const signUp = function(obj) {
 	console.log(`${(obj.email = "green")} ||| ${obj.password} ||| ${obj.passwordConfirm}`);
