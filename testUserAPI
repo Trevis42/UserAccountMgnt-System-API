@@ -1,0 +1,9 @@
+const UAM = require("./API stuff/UserAcctMgmtFP");
+
+const userDB = new Map();
+
+const user = new UAM.user("rawr", "purple", "purple");
+
+console.log(user);
+console.log(UAM.signUp(user));
+console.log(UAM.signIn(user));
