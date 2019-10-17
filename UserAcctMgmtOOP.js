@@ -65,7 +65,7 @@ class User {
 			this.isSignedIn = false;
 		}
 		return this;
-	} //if user auth === true (check for email and password);
+	}
 
 	signOut() {
 		if (this.isSignedIn) {
