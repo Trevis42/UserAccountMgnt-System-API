@@ -1,23 +1,17 @@
-const UserAcctMgmt = (function() {
-	const user = {
-		email: "email",
-		password: "password",
-		passwordConfirm: "passwordConfirm"
-	};
+module.exports = {
+	user: function(email, password, passwordConfirm) {
+		this.email = email;
+		this.password = password;
+		this.passwordConfirm = passwordConfirm;
+		return this;
+	}, //private
 
-	const signUp = function() {
-		console.log(`${user.email} ||| ${user.password} ||| ${user.passwordConfirm}`);
-	}; //private
-	function signIn() {
+	signUp: function(obj) {
+		console.log(`${obj.email} ||| ${obj.password} ||| ${obj.passwordConfirm}`);
+	}, //private
+	signIn: function(obj) {
 		console.log("sign in happened");
-	}
-	function signOut(user) {}
-	function changePassword(user) {}
-
-	console.log(signUp());
-	console.log(signIn());
-
-	return user;
-})();
-UserAcctMgmt.user;
-//console.log(UserAcctMgmt);
+	},
+	signOut: function(obj) {},
+	changePassword: function changePassword(previous, next, obj) {}
+};
