@@ -43,6 +43,10 @@ class User {
 				this.isVerified = true;
 				this.saveInfo();
 			}
+			//message for mismatch password
+			else {
+				console.log("Passwords don't match, make sure they match then try again.");
+			}
 		} else {
 			console.log("Sorry, You don't need to sign up AGAIN... :)");
 		}
