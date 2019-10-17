@@ -93,7 +93,7 @@ class User {
 				console.log(`The password: ${previous} does match your current password, please try again.`);
 			}
 		} else {
-			console.log("You need to signing before changing your password.");
+			console.log("You need to sign before changing your password.");
 		}
 		return this;
 	}
